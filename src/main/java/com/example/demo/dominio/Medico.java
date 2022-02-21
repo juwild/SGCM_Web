@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Medico implements Serializable{
 
@@ -23,6 +25,7 @@ public class Medico implements Serializable{
 	private String telefone;
 	private String email;
 	
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "especialidade_id")
 	private Especialidade especialidade;
